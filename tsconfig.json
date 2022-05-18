@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/js", //onde os arquivos JS serão criados
+    "target": "ES6",
+    "noEmitOnError": true //impede que o arquivo JS seja criado enquanto houver erros
+  },
+  "include": ["app/**/*"]
+}
