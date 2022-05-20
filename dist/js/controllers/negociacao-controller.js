@@ -1,15 +1,18 @@
 import { Negociacao } from '../models/negociacao.js';
+import { Negociacoes } from '../models/negociacoes.js';
 export class NegociacaoController {
     //não tipamos constructor
     constructor() {
+        this.negociacoes = new Negociacoes();
         this.inputData = document.querySelector('#data');
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
     }
     //método
     adiciona() {
-        const negociacao = this.criaNegociacao;
-        console.log(negociacao);
+        const negociacao = this.criaNegociacao();
+        this.negociacoes.adiciona(negociacao);
+        console.log(this.negociacoes.lista());
         this.limparFormulario();
     }
     criaNegociacao() {
